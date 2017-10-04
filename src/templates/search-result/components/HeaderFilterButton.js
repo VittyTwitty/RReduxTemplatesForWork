@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import ArrowRightFa from 'react-icons/lib/fa/arrow-right'
+import AnyPrice from "./FiltersOfSearch/AnyPrice";
+import AnyBeds from "./FiltersOfSearch/AnyBeds";
+import AnyBath from "./FiltersOfSearch/AnyBath";
+import AnyFilters from "./FiltersOfSearch/AnyFilters";
 
 class HeaderFilterButton extends Component {
   constructor() {
@@ -20,23 +24,23 @@ class HeaderFilterButton extends Component {
 
     switch (title) {
       case 'Any Price':
-        blockFilter = <div>1</div>;
+        blockFilter = <AnyPrice/>;
         break;
       case 'Any Beds':
-        blockFilter = <div>2</div>;
+        blockFilter = <AnyBeds/>;
         break;
       case 'Any Bath':
-        blockFilter = <div>3</div>;
+        blockFilter = <AnyBath/>;
         break;
       case 'Any Filters':
-        blockFilter = <div>4</div>;
+        blockFilter = <AnyFilters/>;
         break;
       default:
         return null
     }
 
     return (
-      <div>
+      <div className='map-f_header--block-wrapper'>
         <button
           onClick={(e) => this.onClickFilterButton(e, title)}
         >
@@ -47,7 +51,7 @@ class HeaderFilterButton extends Component {
         </button>
         {
           this.props.titleOfButton === title ?
-            <div>{blockFilter}</div> :
+            <div className='map-f_header--block-filter'>{blockFilter}</div> :
             ''
         }
       </div>
