@@ -1,0 +1,32 @@
+.map-f {
+  width: 100%;
+  background-color: #dedede;
+  &_header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    & > div > button {
+      border: none;
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      background-color: #fff;
+      outline: none;
+      &:hover {
+        background-color: #bfbfbf;
+      }
+      img {
+        width: 10px;
+      }
+    }
+
+    &--img-wrapper {
+      margin-left: 5px;
+    }
+    &--search {
+      padding: 0 5px;
+    }
+  }
+
+}

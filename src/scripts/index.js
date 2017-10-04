@@ -1,1 +1,1 @@
-import '../templates/index'
+import '../styles/main.scss';

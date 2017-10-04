@@ -10,6 +10,7 @@ module.exports = {
     entry: {
         vendor: ['jquery', 'react', 'react-dom', 'highlight-words-core', 'react-redux', 'redux'],
         main: './scripts/index.js',
+        'search-results': './templates/search-result/index.js'
     },
     output: {
         filename: 'scripts/[name].js',
@@ -80,7 +81,15 @@ module.exports = {
             filename: 'index.html',
             alwaysWriteToDisk: true,
             template: 'index.pug',
-            excludeChunks: ['auth', 'map', 'calculator', 'redux-modals']
+            excludeChunks: ['search-results']
+
+        }),
+        new HtmlWebpackPlugin({
+            title: 'My App',
+            filename: 'pages/search-result.html',
+            alwaysWriteToDisk: true,
+            template: 'pages/search-result.pug',
+            // excludeChunks: ['auth', 'map', 'calculator', 'redux-modals']
 
         }),
         new webpack.ProvidePlugin({
