@@ -15,3 +15,18 @@ export const toggleNav = (title) => (dispatch, getState) => {
     payload: title
   });
 };
+
+
+export const getArrayOfFilters = (arrayOfFilters) => (dispatch, getState) => {
+  dispatch({
+    type: 'ARRAY_OF_FILTERS_1',
+    payload: arrayOfFilters
+  })
+};
+
+export const deleteArrayOfFilters = () => (dispatch) => {
+  dispatch({
+    type: 'DELETE_FILTERS_1'
+  })
+};
+

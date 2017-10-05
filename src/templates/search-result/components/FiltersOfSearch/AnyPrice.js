@@ -4,7 +4,7 @@ class AnyPrice extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className='map-f_header--block-filter'>
 			ddddddddddddddddddddddddddddddddd
 				sddddddddddddddddddddddddddddddd
 				sddddddddddddddddddddddddddddddd

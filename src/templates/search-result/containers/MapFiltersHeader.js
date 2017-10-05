@@ -10,36 +10,39 @@ class MapFiltersHeader extends Component {
   constructor() {
     super();
 
-    this.filterButtons = ['Any Price', 'Any Beds', 'Any Bath', 'Any Filters']
+    this.filterButtons = ['Any Price', 'Any Beds', 'Any Bath', 'More Filters']
   }
 
 
   render() {
-    const {toggleNav} = this.props.actionFilters;
+    const {toggleNav, getArrayOfFilters} = this.props.actionFilters;
     const {
       stateOfToggleButton,
       titleOfButton
     } = this.props.filters;
 
     return (
-      <div className='map-f_header'>
-        <div><input
-          className='map-f_header--search'
-          type="search"
-          placeholder='Search'
-        /></div>
-        {
-          this.filterButtons.map((item, index) =>
-            <HeaderFilterButton
-              titleOfButton={titleOfButton}
-              stateOfToggleButton={stateOfToggleButton}
-              toggleNav={toggleNav}
-              key={index}
-              title={item}
-            />
-          )
-        }
-
+      <div>
+        <div className='map-f_header'>
+          <div><input
+            className='map-f_header--search'
+            type="search"
+            placeholder='Search'
+          /></div>
+          {
+            this.filterButtons.map((item, index) =>
+              <HeaderFilterButton
+                titleOfButton={titleOfButton}
+                stateOfToggleButton={stateOfToggleButton}
+                toggleNav={toggleNav}
+                getArrayOfFilters={getArrayOfFilters}
+                key={index}
+                id={index}
+                title={item}
+              />
+            )
+          }
+        </div>
       </div>
     )
   }

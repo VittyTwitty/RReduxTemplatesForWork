@@ -27,7 +27,7 @@
     &--search {
       padding: 0 5px;
     }
-    &--block-wrapper {
+    &--block-wrapper:not(:last-child) {
       position: relative;
     }
     &--block-filter {
@@ -38,8 +38,76 @@
       padding: 20px;
       background-color: #fff;
     }
+    &--dropdown {
+      width: 100%;
+      height: 70px;
+      background-color: #EFEFEF;
+    }
 
   }
 
 }
+
+.filters {
+  &_more-filters {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    z-index: 100;
+    &--top {
+      display: flex;
+      flex-direction: row;
+      background-color: #fff;
+      height: 340px;
+      & > div {
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+        padding: 10px;
+      }
+      h3 {
+        font-weight: 600;
+        font-size: 1.125em;
+        margin-bottom: 10px;
+      }
+    }
+    &--bottom {
+      background-color: #F1F1F1;
+      height: 80px;
+    }
+  }
+}
+
+//MAPS
+.g-maps-up{
+  position: absolute;
+  right: 65px;
+  bottom: 23px;
+  padding: 5px;
+  z-index: 1000;
+  &_as-move{
+    background-color: rgba(255,255,255, .6);
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+  &_draw-element {
+    background-color: #fff;
+    margin-left: 20px;
+    padding: 5px 10px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    outline: none;
+    &:hover {
+      background-color: #e6e6e6;
+    }
+    &:active {
+      background-color: #f0f0f0;
+    }
+  }
+}
+
+
 
