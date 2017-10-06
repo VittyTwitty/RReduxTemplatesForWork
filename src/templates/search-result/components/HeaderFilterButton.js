@@ -13,6 +13,7 @@ class HeaderFilterButton extends Component {
 
   onClickFilterButton(e, title) {
     this.props.toggleNav(title);
+
   }
 
   render() {

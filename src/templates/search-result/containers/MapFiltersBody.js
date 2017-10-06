@@ -7,7 +7,10 @@ class MapFiltersBody extends Component {
     const {dataForMaps} = this.props.filters;
     return (
       <div>
-        <MapWithControlledZoom dataForMaps={dataForMaps}/>
+        <MapWithControlledZoom
+          id='map-with-controls'
+          dataForMaps={dataForMaps}
+        />
       </div>
     )
   }

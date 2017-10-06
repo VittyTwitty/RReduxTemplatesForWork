@@ -57,7 +57,7 @@ const filters = (state = initialState, action) => {
       return {
         ...state,
         arrayOfFilters: []
-      }
+      };
     default:
       return state;
 
