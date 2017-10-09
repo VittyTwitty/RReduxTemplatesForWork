@@ -7,14 +7,8 @@ import {bindActionCreators} from "redux";
 
 class Login extends Component {
   loginHandle(values) {
-    // let formInfo = {
-    //   username: 'admin',
-    //   password: '123qwe123'
-    // };
-    this.props.usersAction.loginUser({password: '123qwe123', username: 'admin'});
-
-    // usersAction.loginUser(values);
-
+    this.props.usersAction.loginUser(values);
+    console.log(values)
   }
 
 

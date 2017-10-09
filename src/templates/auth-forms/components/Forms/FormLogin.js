@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import FormInput from "../FormInput";
 import { Field, reduxForm } from 'redux-form'
 
 class FormLogin extends Component {
