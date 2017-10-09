@@ -1,18 +1,17 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
-class App extends Component {
+
+class Register extends Component {
 
   render() {
 
     return (
       <div>
-        APPAUTH
-        <Link to={`/register`}>
-          Registration
-        </Link>
+        <Link to='/login'>Login</Link>
+        Registration
       </div>
     )
   }
 }
 
-export default App;
+export default Register;
