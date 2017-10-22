@@ -10,8 +10,9 @@ module.exports = {
   entry: {
     vendor: ['jquery', 'react', 'react-dom', 'highlight-words-core', 'react-redux', 'redux'],
     main: './scripts/index.js',
-    'search-results': './templates/search-result/index.js',
+    // 'search-results': './templates/search-result/index.js',
     'auth-forms': './templates/auth-forms/index.js',
+    'js-map': './templates/js-map/index.js',
   },
   output: {
     filename: 'scripts/[name].js',
