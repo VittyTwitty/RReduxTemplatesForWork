@@ -13,6 +13,7 @@ module.exports = {
     // 'search-results': './templates/search-result/index.js',
     'auth-forms': './templates/auth-forms/index.js',
     'js-map': './templates/js-map/index.js',
+    'rating-stars': './templates/rating-stars/index.js',
   },
   output: {
     filename: 'scripts/[name].js',
@@ -83,7 +84,7 @@ module.exports = {
       filename: 'index.html',
       alwaysWriteToDisk: true,
       template: 'index.pug',
-      excludeChunks: ['search-results', 'auth-forms']
+      excludeChunks: ['search-results', 'auth-forms', 'js-map']
 
     }),
     new HtmlWebpackPlugin({
@@ -91,7 +92,7 @@ module.exports = {
       filename: 'pages/search-result.html',
       alwaysWriteToDisk: true,
       template: 'pages/search-result.pug',
-      excludeChunks: ['auth-forms']
+      excludeChunks: ['auth-forms', 'rating-stars']
       // excludeChunks: ['auth', 'map', 'calculator', 'redux-modals']
 
     }),
@@ -100,7 +101,7 @@ module.exports = {
       filename: 'pages/auth.html',
       alwaysWriteToDisk: true,
       template: 'pages/auth.pug',
-      excludeChunks: ['search-results']
+      excludeChunks: ['search-results', 'rating-stars']
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
