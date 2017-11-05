@@ -4,27 +4,71 @@ import RatingItem from "./RatingItem";
 class RatingList extends Component {
 	render() {
 		let starsArr = [];
-		let colorForStar = [];
+		let starsArrActive = [];
+		let flagOfHalfStar = false;
+
 		const {stars, starsActive, colorActive, colorNoActive} = this.props;
-		for (let i = 0; i < stars; i++) {
-			starsArr.push('');
-			if (starsActive > i) {
-				colorForStar.push(colorActive);
+
+		if (Number.isInteger(starsActive)) {
+			flagOfHalfStar = false;
+			console.log(`${starsActive} - целое число`);
+			for (let i = 0; i < stars; i++) {
+				starsArr.push('');
+				(starsActive > i) ? starsArrActive.push('') : null;
+			}
+		} else {
+			if (starsActive - (~~starsActive) >= .5) {
+				flagOfHalfStar = true;
+				console.log(`${starsActive} - дробное число >= 0.5`);
+				for (let i = 0; i < stars; i++) {
+					starsArr.push('');
+					(starsActive > i + 1) ? starsArrActive.push('') : null;
+				}
 			} else {
-				colorForStar.push(colorNoActive);
+				flagOfHalfStar = false;
+				console.log(`${starsActive} - дробное число < 0.5`);
+				for (let i = 0; i < stars; i++) {
+					starsArr.push('');
+					(starsActive > i + 1) ? starsArrActive.push('') : null;
+				}
 			}
 		}
+
 		return (
-			<div>
-				{
-					starsArr.map((item, index) =>
-						<RatingItem
-							colorForStar={colorForStar[index]}
-							key={index}
-							settings={this.props}
-						/>
-					)
-				}
+			<div
+				style={{position: 'relative'}}>
+				<div
+					style={{position: 'absolute'}}>
+					{
+						starsArr.map((item, index) =>
+							<RatingItem
+								colorForStar={colorNoActive}
+								key={index}
+								settings={this.props}
+							/>
+						)
+					}
+				</div>
+				<div
+					style={{position: 'absolute'}}>
+					{
+						starsArrActive.map((item, index) =>
+							<RatingItem
+								colorForStar={colorActive}
+								key={index}
+								settings={this.props}
+							/>
+						)
+					}
+					{
+						flagOfHalfStar ?
+							<RatingItem
+								flagOfHalfStar={flagOfHalfStar}
+								colorForStar={colorActive}
+								settings={this.props}
+							/> : ''
+					}
+				</div>
 			</div>
 		)
 	}

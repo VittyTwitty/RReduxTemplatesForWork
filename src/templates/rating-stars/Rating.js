@@ -5,10 +5,9 @@ class Rating extends Component {
 	render() {
 		let settings = {
 			colorActive: 'orange',
-			colorNoActive: 'rgb(228, 228, 228)',
+			colorNoActive: 'gray',
 			stars: 5,
-			starsActive: 3,
-
+			starsActive: 4.5,
 		};
 		return (
 			<div>
